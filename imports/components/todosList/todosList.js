@@ -45,12 +45,7 @@ class TodosListCtrl {
 
   addTask(newTask) {
     // Insert a task into the collection
-    Tasks.insert({
-      text: newTask,
-      createdAt: new Date,
-      owner: Meteor.userId(),
-      username: Meteor.user().username
-    });
+    Meteor.call('tasks.insert', newTask);
 
     // Clear form
     this.newTask = '';
