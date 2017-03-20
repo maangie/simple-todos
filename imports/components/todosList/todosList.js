@@ -13,7 +13,7 @@ class TodosListCtrl {
     this.helpers({
       tasks() {
         const selector = {};
-        
+
         // If hide completed is checked, filter tasks
         if (this.getReactively('hideCompleted')) {
           selector.checked = {
@@ -33,7 +33,7 @@ class TodosListCtrl {
           checked: {
             $ne: true
           }
-        }).count();        
+        }).count();
       }
     })
   }
